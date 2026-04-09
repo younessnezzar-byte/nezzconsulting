@@ -77,7 +77,7 @@ const Home = () => {
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-600 font-medium mb-6">
-            Trusted by growing businesses and PE-backed companies across Canada
+            Trusted by growing businesses and PE-backed companies
           </p>
           <div className="flex justify-center items-center space-x-8 text-gray-400">
             <div className="text-2xl font-bold">SMBs</div>

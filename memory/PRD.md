@@ -48,6 +48,12 @@ Professional 6-page website for Nezz Consulting, a financial consulting firm in 
 
 ### Phase 1 - Frontend MVP (December 2025)
 
+#### Recent Updates (Latest):
+- ✅ Updated stats: "$1B+" now reads "Budget and Forecast Managed"
+- ✅ Services: Removed "Swift Finance" from Business Intelligence service title and features
+- ✅ Partners Section: Moved Swift Finance partnership to "Our Partners" section on About page
+- ✅ Trust bar: Removed "across Canada" to make it more general
+
 #### Pages Completed:
 - ✅ Home page with hero, stats, services cards, who we serve preview, CTA
 - ✅ Services page with 4 detailed service sections and features

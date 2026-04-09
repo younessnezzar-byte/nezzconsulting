@@ -23,7 +23,7 @@ export const IMAGES = {
 };
 
 export const STATS = [
-  { value: '$1B+', label: 'Revenue Managed' },
+  { value: '$1B+', label: 'Budget and Forecast Managed' },
   { value: '15+', label: 'Years Experience' },
   { value: '50+', label: 'Projects Delivered' },
   { value: '100%', label: 'Client Satisfaction' },
@@ -45,17 +45,17 @@ export const SERVICES = [
     ],
   },
   {
-    id: 'bi-swift',
-    title: 'Business Intelligence & Swift Finance',
+    id: 'bi',
+    title: 'Business Intelligence',
     shortDescription: 'Turn your data into actionable insights with powerful BI dashboards.',
-    fullDescription: 'As an official Swift Finance partner, we help organizations move beyond static spreadsheets into dynamic, driver-based financial models. We design and implement BI dashboards that connect your operational metrics directly to financial outcomes, giving you real-time visibility into performance and enabling faster, data-driven decisions.',
+    fullDescription: 'We help organizations move beyond static spreadsheets into dynamic, driver-based financial models. We design and implement BI dashboards that connect your operational metrics directly to financial outcomes, giving you real-time visibility into performance and enabling faster, data-driven decisions.',
     image: IMAGES.services.bi,
     features: [
-      'Swift Finance platform implementation',
       'Custom dashboard and reporting design',
       'Driver-based financial modeling',
       'Data integration and automation',
       'Real-time performance monitoring',
+      'Executive-level data visualization',
     ],
   },
   {
@@ -161,8 +161,16 @@ export const COMPANY_VALUES = [
   },
 ];
 
+export const PARTNERS = [
+  {
+    name: 'Swift Finance',
+    description: 'Nezz Consulting is an official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
+    logo: null, // Can add logo URL later
+  },
+];
+
 export const SWIFT_FINANCE = {
-  title: 'Swift Finance Partnership',
+  title: 'Our Partners',
   description: 'Nezz Consulting is an official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
 };
 
