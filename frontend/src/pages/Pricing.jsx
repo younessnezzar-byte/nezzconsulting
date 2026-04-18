@@ -94,7 +94,7 @@ const Pricing = () => {
   {
     name: 'Financial Model Audit',
     description: 'Review of an existing model — logic, assumptions, structure, and output quality',
-    price: 'C$900 flat fee'
+    price: "C$499 flat fee"
   }];
 
 
