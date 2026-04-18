@@ -164,14 +164,29 @@ export const COMPANY_VALUES = [
 export const PARTNERS = [
   {
     name: 'Swift Finance',
-    description: 'Nezz Consulting is an official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
-    logo: null, // Can add logo URL later
+    description: 'Official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
+    website: 'https://www.swiftfinance.fr',
+  },
+  {
+    name: 'Goodyear',
+    description: 'Strategic partnership providing financial planning and analysis expertise for operational excellence.',
+    website: 'https://www.goodyear.com',
+  },
+  {
+    name: 'Intact Insurance',
+    description: 'Delivering business intelligence and financial modeling solutions to support strategic growth initiatives.',
+    website: 'https://www.intact.ca',
+  },
+  {
+    name: 'EXIA',
+    description: 'Collaborative partnership leveraging advanced analytics and financial expertise for engineering consulting excellence.',
+    website: 'https://www.exia-conseil.com',
   },
 ];
 
 export const SWIFT_FINANCE = {
   title: 'Our Partners',
-  description: 'Nezz Consulting is an official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
+  description: 'Strategic partnerships that enhance our service delivery and bring additional value to our clients.',
 };
 
 export const BLOG_POSTS = [

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { NAV_ITEMS, LOGO_URL } from '../data/mock';
+import { useLanguage } from '../context/LanguageContext';
+import { useTranslation } from '../translations/translations';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
+  const t = useTranslation(language);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +25,15 @@ const Navbar = () => {
   }, [location]);
 
   const isActive = (path) => location.pathname === path;
+
+  const navItems = [
+    { label: t.nav.home, path: '/' },
+    { label: t.nav.services, path: '/services' },
+    { label: t.nav.whoWeServe, path: '/who-we-serve' },
+    { label: t.nav.about, path: '/about' },
+    { label: t.nav.insights, path: '/insights' },
+    { label: t.nav.contact, path: '/contact' },
+  ];
 
   return (
     <nav
@@ -41,7 +54,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {NAV_ITEMS.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
@@ -54,16 +67,35 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="ml-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300 flex items-center space-x-2"
+              aria-label="Toggle language"
+            >
+              <Globe size={18} />
+              <span className="uppercase">{language}</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
+              aria-label="Toggle language"
+            >
+              <Globe size={20} />
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -76,7 +108,7 @@ const Navbar = () => {
         }`}
       >
         <div className="px-4 pt-2 pb-6 space-y-1 bg-[#0a1628] border-t border-gray-800">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}

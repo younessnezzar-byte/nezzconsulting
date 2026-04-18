@@ -48,11 +48,15 @@ Professional 6-page website for Nezz Consulting, a financial consulting firm in 
 
 ### Phase 1 - Frontend MVP (December 2025)
 
-#### Recent Updates (Latest):
+#### Recent Updates (Latest - Multi-Language & Partners):
+- ✅ **Multi-language support**: English/French toggle with globe icon in navbar
+- ✅ **Partners Section**: Added 4 partners (Swift Finance, Goodyear, Intact Insurance, EXIA) with descriptions and website links
+- ✅ Complete translations for all pages (Home, Services, Who We Serve, About, Insights, Contact)
+- ✅ Language preference persists during navigation
 - ✅ Updated stats: "$1B+" now reads "Budget and Forecast Managed"
-- ✅ Services: Removed "Swift Finance" from Business Intelligence service title and features
+- ✅ Services: Removed "Swift Finance" from Business Intelligence service title
 - ✅ Partners Section: Moved Swift Finance partnership to "Our Partners" section on About page
-- ✅ Trust bar: Removed "across Canada" to make it more general
+- ✅ Trust bar: Removed "across Canada" for broader appeal
 
 #### Pages Completed:
 - ✅ Home page with hero, stats, services cards, who we serve preview, CTA

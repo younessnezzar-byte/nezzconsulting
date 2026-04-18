@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, Lightbulb, Users, ExternalLink } from 'lucide-react';
-import { FOUNDER, COMPANY_VALUES, SWIFT_FINANCE, IMAGES } from '../data/mock';
+import { FOUNDER, COMPANY_VALUES, SWIFT_FINANCE, PARTNERS, IMAGES } from '../data/mock';
 
 const About = () => {
   return (
@@ -105,19 +105,48 @@ const About = () => {
         </div>
       </section>
 
-      {/* Swift Finance Partnership */}
+      {/* Partners Section */}
       <section className="py-20 bg-gradient-to-br from-[#0a1628] to-[#0f1f38]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-[#2ecc8a]/10 rounded-full mb-6">
               <ExternalLink className="text-[#2ecc8a]" size={32} />
             </div>
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl font-bold text-white mb-4">
               {SWIFT_FINANCE.title}
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               {SWIFT_FINANCE.description}
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {PARTNERS.map((partner, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/10"
+              >
+                <div className="h-20 flex items-center justify-center mb-4">
+                  <h3 className="text-2xl font-bold text-white text-center">
+                    {partner.name}
+                  </h3>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  {partner.description}
+                </p>
+                {partner.website && (
+                  <a
+                    href={partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#2ecc8a] hover:text-[#26b377] transition-colors duration-300 text-sm font-medium"
+                  >
+                    Visit Website
+                    <ExternalLink className="ml-1" size={14} />
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
