@@ -4,6 +4,7 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
+      pricing: 'Pricing',
       whoWeServe: 'Who We Serve',
       about: 'About',
       insights: 'Insights',
@@ -219,6 +220,7 @@ export const translations = {
     nav: {
       home: 'Accueil',
       services: 'Services',
+      pricing: 'Tarification',
       whoWeServe: 'Nos Clients',
       about: 'À Propos',
       insights: 'Perspectives',

@@ -226,6 +226,7 @@ export const CONTACT_INFO = {
 export const NAV_ITEMS = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
+  { label: 'Pricing', path: '/pricing' },
   { label: 'Who We Serve', path: '/who-we-serve' },
   { label: 'About', path: '/about' },
   { label: 'Insights', path: '/insights' },

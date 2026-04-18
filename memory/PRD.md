@@ -48,10 +48,17 @@ Professional 6-page website for Nezz Consulting, a financial consulting firm in 
 
 ### Phase 1 - Frontend MVP (December 2025)
 
-#### Recent Updates (Latest - Multi-Language & Partners):
+#### Recent Updates (Latest - Pricing Page Added):
+- ✅ **New Pricing Page**: Complete "Services & Pricing" page at /pricing
+  - 3 pricing tiers: Finance Foundations (C$2,500/mo), Finance Transformation (C$5,500/mo - featured), Strategic Finance Partner (Custom)
+  - Featured package with green border highlighting
+  - 4 add-on modules in 2x2 grid
+  - 5 FAQ items with expandable content
+  - Bottom CTA section
+  - Added to navigation menu (English: "Pricing" / French: "Tarification")
 - ✅ **Multi-language support**: English/French toggle with globe icon in navbar
 - ✅ **Partners Section**: Added 4 partners (Swift Finance, Goodyear, Intact Insurance, EXIA) with descriptions and website links
-- ✅ Complete translations for all pages (Home, Services, Who We Serve, About, Insights, Contact)
+- ✅ Complete translations for all pages (Home, Services, Pricing, Who We Serve, About, Insights, Contact)
 - ✅ Language preference persists during navigation
 - ✅ Updated stats: "$1B+" now reads "Budget and Forecast Managed"
 - ✅ Services: Removed "Swift Finance" from Business Intelligence service title
@@ -61,8 +68,9 @@ Professional 6-page website for Nezz Consulting, a financial consulting firm in 
 #### Pages Completed:
 - ✅ Home page with hero, stats, services cards, who we serve preview, CTA
 - ✅ Services page with 4 detailed service sections and features
+- ✅ **Pricing page with 3 packages, add-ons, FAQs, and CTAs**
 - ✅ Who We Serve page with SMB and PE-backed segments + testimonials
-- ✅ About page with mission, values, founder profile (Younes Younes), Swift Finance partnership
+- ✅ About page with mission, values, founder profile (Younes Younes), partners section (4 partners)
 - ✅ Insights page with 3 blog posts and newsletter form (frontend mock)
 - ✅ Contact page with form validation and contact info (frontend mock)
 

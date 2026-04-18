@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import Pricing from "./pages/Pricing";
 import WhoWeServe from "./pages/WhoWeServe";
 import About from "./pages/About";
 import Insights from "./pages/Insights";
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/who-we-serve" element={<WhoWeServe />} />
             <Route path="/about" element={<About />} />
             <Route path="/insights" element={<Insights />} />
