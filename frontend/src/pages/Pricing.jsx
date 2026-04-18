@@ -3,15 +3,17 @@ import { Check, Sparkles, TrendingUp, Building2, HelpCircle, ArrowRight } from '
 import { Link } from 'react-router-dom';
 
 const Pricing = () => {
-  const [billingPeriod, setBillingPeriod] = useState('monthly');
+  const [billingPeriod, setBillingPeriod] = useState('3-month');
 
   const packages = [
     {
       tag: 'Starter',
       name: 'Finance Foundations',
-      price: 'C$2,500',
+      price1Month: 'C$3,000',
+      price3Month: 'C$2,500',
       period: '/month',
-      duration: '3-month engagement · 1 focus area',
+      duration1Month: '1-month rolling · 1 focus area',
+      duration3Month: '3-month engagement · 1 focus area',
       target: 'SMBs getting their financial house in order',
       icon: Sparkles,
       featured: false,
@@ -31,9 +33,11 @@ const Pricing = () => {
       tag: 'Growth',
       name: 'Finance Transformation',
       tagline: 'Most Popular',
-      price: 'C$5,500',
+      price1Month: 'C$6,500',
+      price3Month: 'C$5,500',
       period: '/month',
-      duration: '3-month engagement · Full transformation',
+      duration1Month: '1-month rolling · Full transformation',
+      duration3Month: '3-month engagement · Full transformation',
       target: 'SMBs ready to operate like enterprise',
       icon: TrendingUp,
       featured: true,
@@ -53,9 +57,11 @@ const Pricing = () => {
     {
       tag: 'PE / Enterprise',
       name: 'Strategic Finance Partner',
-      price: 'Custom',
+      price1Month: 'Custom',
+      price3Month: 'Custom',
       period: 'pricing',
-      duration: '3–6 month engagement · Multi-entity',
+      duration1Month: '3–6 month engagement · Multi-entity',
+      duration3Month: '3–6 month engagement · Multi-entity',
       target: 'PE-backed companies & complex organizations',
       icon: Building2,
       featured: false,
@@ -136,16 +142,25 @@ const Pricing = () => {
             {/* Pricing Toggle */}
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20">
               <button
-                onClick={() => setBillingPeriod('monthly')}
+                onClick={() => setBillingPeriod('1-month')}
                 className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                  billingPeriod === 'monthly'
+                  billingPeriod === '1-month'
                     ? 'bg-[#2ecc8a] text-white'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
-                Monthly view
+                1 month
               </button>
-              <span className="px-4 text-sm text-gray-400">3-month commitment</span>
+              <button
+                onClick={() => setBillingPeriod('3-month')}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  billingPeriod === '3-month'
+                    ? 'bg-[#2ecc8a] text-white'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                3 months
+              </button>
             </div>
           </div>
         </div>
@@ -187,12 +202,16 @@ const Pricing = () => {
 
                     {/* Price */}
                     <div className="mb-4">
-                      <span className="text-4xl font-bold text-[#0a1628]">{pkg.price}</span>
+                      <span className="text-4xl font-bold text-[#0a1628]">
+                        {billingPeriod === '3-month' ? pkg.price3Month : pkg.price1Month}
+                      </span>
                       <span className="text-gray-600">{pkg.period}</span>
                     </div>
 
                     {/* Duration & Target */}
-                    <p className="text-sm text-gray-600 mb-2">{pkg.duration}</p>
+                    <p className="text-sm text-gray-600 mb-2">
+                      {billingPeriod === '3-month' ? pkg.duration3Month : pkg.duration1Month}
+                    </p>
                     <p className="text-sm text-gray-700 font-medium mb-6">{pkg.target}</p>
 
                     {/* Divider */}
@@ -239,7 +258,7 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {addons.map((addon, index) => (
               <div
                 key={index}
