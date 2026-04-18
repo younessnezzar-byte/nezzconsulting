@@ -89,7 +89,7 @@ const Pricing = () => {
   {
     name: 'Monthly Fractional CFO',
     description: 'Ongoing monthly advisory, board deck prep, and executive financial reporting',
-    price: 'C$1,800 / month'
+    price: "C$2,500 / month"
   },
   {
     name: 'Financial Model Audit',
