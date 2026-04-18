@@ -48,22 +48,24 @@ Professional 6-page website for Nezz Consulting, a financial consulting firm in 
 
 ### Phase 1 - Frontend MVP (December 2025)
 
-#### Recent Updates (Latest - Pricing Page Added):
+#### Recent Updates (Latest - Partners Carousel with Real Logos):
+- ✅ **Partners Auto-Sliding Carousel**: 3 partners with real logos
+  - EXIA - Swift Finance (with logo)
+  - Goodyear (with logo)
+  - Intact Insurance (with logo)
+  - Auto-slides every 3 seconds
+  - Shows all 3 on desktop, responsive on mobile
+  - Real company logos integrated
+- ✅ **Removed Swift Finance Implementation** from pricing add-ons (now 3 add-ons in 3-column grid)
 - ✅ **New Pricing Page**: Complete "Services & Pricing" page at /pricing
-  - 3 pricing tiers: Finance Foundations (C$2,500/mo), Finance Transformation (C$5,500/mo - featured), Strategic Finance Partner (Custom)
+  - 3 pricing tiers with 1-month vs 3-month toggle
+  - Finance Foundations (C$3,000/C$2,500), Finance Transformation (C$6,500/C$5,500 - featured), Strategic Finance Partner (Custom)
   - Featured package with green border highlighting
-  - 4 add-on modules in 2x2 grid
-  - 5 FAQ items with expandable content
-  - Bottom CTA section
-  - Added to navigation menu (English: "Pricing" / French: "Tarification")
+  - 3 add-on modules in 3-column grid
+  - 5 FAQ items
 - ✅ **Multi-language support**: English/French toggle with globe icon in navbar
-- ✅ **Partners Section**: Added 4 partners (Swift Finance, Goodyear, Intact Insurance, EXIA) with descriptions and website links
-- ✅ Complete translations for all pages (Home, Services, Pricing, Who We Serve, About, Insights, Contact)
-- ✅ Language preference persists during navigation
-- ✅ Updated stats: "$1B+" now reads "Budget and Forecast Managed"
-- ✅ Services: Removed "Swift Finance" from Business Intelligence service title
-- ✅ Partners Section: Moved Swift Finance partnership to "Our Partners" section on About page
-- ✅ Trust bar: Removed "across Canada" for broader appeal
+- ✅ Complete translations for all 7 pages
+- ✅ Updated contact: Montreal, QC / younesnezzar@nezzconsulting.com / +1 (438) 220-1565
 
 #### Pages Completed:
 - ✅ Home page with hero, stats, services cards, who we serve preview, CTA

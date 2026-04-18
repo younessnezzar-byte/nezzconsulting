@@ -163,28 +163,22 @@ export const COMPANY_VALUES = [
 
 export const PARTNERS = [
   {
-    name: 'Swift Finance',
+    name: 'EXIA - Swift Finance',
     description: 'Official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
     website: 'https://www.swiftfinance.fr',
-    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=Swift+Finance', // Replace with actual logo URL
+    logo: 'https://customer-assets.emergentagent.com/job_nezz-consulting/artifacts/zv4zk96q_Swift%20finance.png',
   },
   {
     name: 'Goodyear',
     description: 'Strategic partnership providing financial planning and analysis expertise for operational excellence.',
     website: 'https://www.goodyear.com',
-    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=Goodyear', // Replace with actual logo URL
+    logo: 'https://customer-assets.emergentagent.com/job_nezz-consulting/artifacts/y3uvoh8x_goodyear-logo-01.jpg',
   },
   {
     name: 'Intact Insurance',
     description: 'Delivering business intelligence and financial modeling solutions to support strategic growth initiatives.',
     website: 'https://www.intact.ca',
-    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=Intact', // Replace with actual logo URL
-  },
-  {
-    name: 'EXIA',
-    description: 'Collaborative partnership leveraging advanced analytics and financial expertise for engineering consulting excellence.',
-    website: 'https://www.exia-conseil.com',
-    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=EXIA', // Replace with actual logo URL
+    logo: 'https://customer-assets.emergentagent.com/job_nezz-consulting/artifacts/doder6w0_intact-insurance-logo-png_seeklogo-617829.png',
   },
 ];
 

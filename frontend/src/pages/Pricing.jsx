@@ -96,11 +96,6 @@ const Pricing = () => {
       description: 'Review of an existing model — logic, assumptions, structure, and output quality',
       price: 'C$900 flat fee',
     },
-    {
-      name: 'Swift Finance Implementation',
-      description: 'Full platform setup, data connection, dashboard buildout and team onboarding',
-      price: 'C$2,500 flat fee',
-    },
   ];
 
   const faqs = [

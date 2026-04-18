@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target, Lightbulb, Users, ExternalLink } from 'lucide-react';
 import { FOUNDER, COMPANY_VALUES, SWIFT_FINANCE, PARTNERS, IMAGES } from '../data/mock';
+import PartnersCarousel from '../components/PartnersCarousel';
 
 const About = () => {
   return (
@@ -115,54 +116,13 @@ const About = () => {
             <h2 className="text-4xl font-bold text-white mb-4">
               {SWIFT_FINANCE.title}
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
               {SWIFT_FINANCE.description}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {PARTNERS.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/10"
-              >
-                {/* Logo */}
-                <div className="h-20 flex items-center justify-center mb-4 bg-white rounded-lg p-3">
-                  {partner.logo ? (
-                    <img 
-                      src={partner.logo} 
-                      alt={`${partner.name} logo`}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  ) : (
-                    <h3 className="text-2xl font-bold text-[#0a1628] text-center">
-                      {partner.name}
-                    </h3>
-                  )}
-                </div>
-                
-                {/* Partner Name */}
-                <h3 className="text-xl font-bold text-white text-center mb-3">
-                  {partner.name}
-                </h3>
-                
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  {partner.description}
-                </p>
-                {partner.website && (
-                  <a
-                    href={partner.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-[#2ecc8a] hover:text-[#26b377] transition-colors duration-300 text-sm font-medium"
-                  >
-                    Visit Website
-                    <ExternalLink className="ml-1" size={14} />
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
+          {/* Partners Carousel */}
+          <PartnersCarousel partners={PARTNERS} />
         </div>
       </section>
 
