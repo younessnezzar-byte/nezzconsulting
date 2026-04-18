@@ -48,7 +48,7 @@ const PartnersCarousel = ({ partners }) => {
               </p>
 
               {/* Website Link */}
-              {partner.website && (
+              {partner.website && false && (
                 <a
                   href={partner.website}
                   target="_blank"
