@@ -126,11 +126,26 @@ const About = () => {
                 key={index}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300 border border-white/10"
               >
-                <div className="h-20 flex items-center justify-center mb-4">
-                  <h3 className="text-2xl font-bold text-white text-center">
-                    {partner.name}
-                  </h3>
+                {/* Logo */}
+                <div className="h-20 flex items-center justify-center mb-4 bg-white rounded-lg p-3">
+                  {partner.logo ? (
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  ) : (
+                    <h3 className="text-2xl font-bold text-[#0a1628] text-center">
+                      {partner.name}
+                    </h3>
+                  )}
                 </div>
+                
+                {/* Partner Name */}
+                <h3 className="text-xl font-bold text-white text-center mb-3">
+                  {partner.name}
+                </h3>
+                
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
                   {partner.description}
                 </p>

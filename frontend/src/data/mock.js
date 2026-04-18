@@ -166,21 +166,25 @@ export const PARTNERS = [
     name: 'Swift Finance',
     description: 'Official partner of Swift Finance (by Exia Conseil), a leading FP&A platform. Through this partnership, we help organizations build dynamic financial models, improve forecast quality, connect operational drivers to financial results, and move beyond static reporting toward real performance management.',
     website: 'https://www.swiftfinance.fr',
+    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=Swift+Finance', // Replace with actual logo URL
   },
   {
     name: 'Goodyear',
     description: 'Strategic partnership providing financial planning and analysis expertise for operational excellence.',
     website: 'https://www.goodyear.com',
+    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=Goodyear', // Replace with actual logo URL
   },
   {
     name: 'Intact Insurance',
     description: 'Delivering business intelligence and financial modeling solutions to support strategic growth initiatives.',
     website: 'https://www.intact.ca',
+    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=Intact', // Replace with actual logo URL
   },
   {
     name: 'EXIA',
     description: 'Collaborative partnership leveraging advanced analytics and financial expertise for engineering consulting excellence.',
     website: 'https://www.exia-conseil.com',
+    logo: 'https://via.placeholder.com/200x80/2ecc8a/ffffff?text=EXIA', // Replace with actual logo URL
   },
 ];
 
@@ -214,9 +218,9 @@ export const BLOG_POSTS = [
 ];
 
 export const CONTACT_INFO = {
-  location: 'Vaudreuil-Dorion, QC',
-  email: 'contact@nezzconsulting.com',
-  phone: '+1 (514) 555-0123',
+  location: 'Montreal, QC',
+  email: 'younesnezzar@nezzconsulting.com',
+  phone: '+1 (438) 220-1565',
 };
 
 export const NAV_ITEMS = [
