@@ -2,52 +2,54 @@ import React from 'react';
 import { Target, Lightbulb, Users, ExternalLink } from 'lucide-react';
 import { FOUNDER, COMPANY_VALUES, SWIFT_FINANCE, PARTNERS, IMAGES } from '../data/mock';
 import PartnersCarousel from '../components/PartnersCarousel';
+import { useLanguage } from '../context/LanguageContext';
+import { useTranslation } from '../translations/translations';
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#0a1628] to-[#0f1f38] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              About Nezz Consulting
+              {t.about.title}
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              We exist to make enterprise-level financial rigor accessible to growing businesses and PE-backed companies.
+              {t.about.subtitle}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-[#0a1628] mb-6">
-              Our Mission
+              {t.about.ourMission}
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Financial complexity shouldn't stand in the way of good decisions. We bring clarity, structure, and actionable insights to organizations that need sophisticated financial planning without the overhead of building it in-house. Whether you're scaling fast or optimizing for value creation, we deliver the tools and expertise that turn data into direction.
+              {t.about.missionText}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#0a1628] mb-4">
-              Our Values
+              {t.about.ourValues}
             </h2>
             <p className="text-xl text-gray-600">
-              The principles that guide how we work
+              {t.about.valuesSubtitle}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {COMPANY_VALUES.map((value, index) => {
+            {t.about.values.map((value, index) => {
               const icons = [Target, Lightbulb, Users];
               const Icon = icons[index];
               return (
@@ -71,11 +73,9 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founder Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Founder Image */}
             <div className="lg:w-2/5">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
@@ -93,10 +93,9 @@ const About = () => {
               </div>
             </div>
 
-            {/* Founder Bio */}
             <div className="lg:w-3/5">
               <h2 className="text-4xl font-bold text-[#0a1628] mb-6">
-                Meet the Founder
+                {t.about.meetFounder}
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
                 {FOUNDER.bio}
@@ -106,7 +105,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
       <section className="py-20 bg-gradient-to-br from-[#0a1628] to-[#0f1f38]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -114,32 +112,30 @@ const About = () => {
               <ExternalLink className="text-[#2ecc8a]" size={32} />
             </div>
             <h2 className="text-4xl font-bold text-white mb-4">
-              {SWIFT_FINANCE.title}
+              {t.about.ourPartners}
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
-              {SWIFT_FINANCE.description}
+              {t.about.partnersSubtitle}
             </p>
           </div>
 
-          {/* Partners Carousel */}
           <PartnersCarousel partners={PARTNERS} />
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-[#0a1628] mb-6">
-            Let's work together
+            {t.about.letsWork}
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Ready to bring clarity and structure to your financial operations? Let's talk.
+            {t.about.letsWorkText}
           </p>
           <a
             href="/contact"
             className="inline-flex items-center px-8 py-4 bg-[#2ecc8a] text-white font-semibold rounded-lg hover:bg-[#26b377] transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Get in Touch
+            {t.about.getInTouch}
           </a>
         </div>
       </section>

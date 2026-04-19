@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 import { CONTACT_INFO } from '../data/mock';
 import { toast } from 'sonner';
+import { useLanguage } from '../context/LanguageContext';
+import { useTranslation } from '../translations/translations';
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,19 +26,19 @@ const Contact = () => {
 
   const validateForm = () => {
     if (!formData.name.trim()) {
-      toast.error('Please enter your name');
+      toast.error(language === 'fr' ? 'Veuillez entrer votre nom' : 'Please enter your name');
       return false;
     }
     if (!formData.email.trim()) {
-      toast.error('Please enter your email');
+      toast.error(language === 'fr' ? 'Veuillez entrer votre email' : 'Please enter your email');
       return false;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      toast.error('Please enter a valid email address');
+      toast.error(language === 'fr' ? 'Veuillez entrer une adresse email valide' : 'Please enter a valid email address');
       return false;
     }
     if (!formData.message.trim()) {
-      toast.error('Please enter a message');
+      toast.error(language === 'fr' ? 'Veuillez entrer un message' : 'Please enter a message');
       return false;
     }
     return true;
@@ -49,9 +53,8 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Mock submission
     setTimeout(() => {
-      toast.success('Thank you! We\'ll get back to you within 24 hours.');
+      toast.success(language === 'fr' ? 'Merci! Nous vous répondrons dans les 24 heures.' : 'Thank you! We\'ll get back to you within 24 hours.');
       setFormData({
         name: '',
         email: '',
@@ -65,28 +68,25 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#0a1628] to-[#0f1f38] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Let's Talk
+              {t.contact.title}
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Ready to bring clarity to your financial operations? Get in touch and let's discuss how we can help.
+              {t.contact.subtitle}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
-            {/* Contact Info */}
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold text-[#0a1628] mb-8">
-                Get in Touch
+                {t.contact.getInTouch}
               </h2>
 
               <div className="space-y-6 mb-12">
@@ -95,7 +95,7 @@ const Contact = () => {
                     <MapPin className="text-[#2ecc8a]" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0a1628] mb-1">Location</h3>
+                    <h3 className="font-semibold text-[#0a1628] mb-1">{t.contact.location}</h3>
                     <p className="text-gray-600">{CONTACT_INFO.location}</p>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ const Contact = () => {
                     <Mail className="text-[#2ecc8a]" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0a1628] mb-1">Email</h3>
+                    <h3 className="font-semibold text-[#0a1628] mb-1">{t.contact.email}</h3>
                     <a
                       href={`mailto:${CONTACT_INFO.email}`}
                       className="text-gray-600 hover:text-[#2ecc8a] transition-colors duration-300"
@@ -120,7 +120,7 @@ const Contact = () => {
                     <Phone className="text-[#2ecc8a]" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0a1628] mb-1">Phone</h3>
+                    <h3 className="font-semibold text-[#0a1628] mb-1">{t.contact.phone}</h3>
                     <a
                       href={`tel:${CONTACT_INFO.phone}`}
                       className="text-gray-600 hover:text-[#2ecc8a] transition-colors duration-300"
@@ -132,33 +132,22 @@ const Contact = () => {
               </div>
 
               <div className="bg-gradient-to-br from-[#0a1628] to-[#0f1f38] rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-4">Why Nezz Consulting?</h3>
+                <h3 className="text-2xl font-bold mb-4">{t.contact.whyNezz}</h3>
                 <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start">
-                    <span className="text-[#2ecc8a] mr-2">✓</span>
-                    <span>$1B+ in revenue managed</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2ecc8a] mr-2">✓</span>
-                    <span>Swift Finance certified partner</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2ecc8a] mr-2">✓</span>
-                    <span>Tailored solutions for SMBs & PE-backed companies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2ecc8a] mr-2">✓</span>
-                    <span>Proven expertise in FP&A and BI</span>
-                  </li>
+                  {t.contact.reasons.map((reason, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-[#2ecc8a] mr-2">✓</span>
+                      <span>{reason}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
                 <h2 className="text-3xl font-bold text-[#0a1628] mb-8">
-                  Send Us a Message
+                  {t.contact.sendMessage}
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -168,7 +157,7 @@ const Contact = () => {
                         htmlFor="name"
                         className="block text-sm font-semibold text-gray-700 mb-2"
                       >
-                        Name *
+                        {t.contact.name} *
                       </label>
                       <input
                         type="text"
@@ -177,7 +166,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2ecc8a] focus:border-transparent transition-all duration-300"
-                        placeholder="Your name"
+                        placeholder={language === 'fr' ? 'Votre nom' : 'Your name'}
                         disabled={isSubmitting}
                       />
                     </div>
@@ -196,7 +185,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2ecc8a] focus:border-transparent transition-all duration-300"
-                        placeholder="your@email.com"
+                        placeholder={language === 'fr' ? 'votre@email.com' : 'your@email.com'}
                         disabled={isSubmitting}
                       />
                     </div>
@@ -208,7 +197,7 @@ const Contact = () => {
                         htmlFor="company"
                         className="block text-sm font-semibold text-gray-700 mb-2"
                       >
-                        Company
+                        {t.contact.company}
                       </label>
                       <input
                         type="text"
@@ -217,7 +206,7 @@ const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2ecc8a] focus:border-transparent transition-all duration-300"
-                        placeholder="Your company"
+                        placeholder={language === 'fr' ? 'Votre entreprise' : 'Your company'}
                         disabled={isSubmitting}
                       />
                     </div>
@@ -227,7 +216,7 @@ const Contact = () => {
                         htmlFor="phone"
                         className="block text-sm font-semibold text-gray-700 mb-2"
                       >
-                        Phone
+                        {t.contact.phone}
                       </label>
                       <input
                         type="tel"
@@ -247,7 +236,7 @@ const Contact = () => {
                       htmlFor="message"
                       className="block text-sm font-semibold text-gray-700 mb-2"
                     >
-                      Message *
+                      {t.contact.message} *
                     </label>
                     <textarea
                       id="message"
@@ -256,7 +245,7 @@ const Contact = () => {
                       onChange={handleChange}
                       rows="6"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2ecc8a] focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="Tell us about your needs..."
+                      placeholder={language === 'fr' ? 'Parlez-nous de vos besoins...' : 'Tell us about your needs...'}
                       disabled={isSubmitting}
                     />
                   </div>
@@ -267,10 +256,10 @@ const Contact = () => {
                     className="w-full md:w-auto px-8 py-4 bg-[#2ecc8a] text-white font-semibold rounded-lg hover:bg-[#26b377] transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center"
                   >
                     {isSubmitting ? (
-                      'Sending...'
+                      language === 'fr' ? 'Envoi...' : 'Sending...'
                     ) : (
                       <>
-                        Send Message
+                        {t.contact.send}
                         <Send className="ml-2" size={18} />
                       </>
                     )}
