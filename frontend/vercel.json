@@ -1,3 +1,5 @@
+# IMPORTANT: Move this file to /app/frontend/vercel.json if deploying from frontend directory
+
 {
   "rewrites": [
     {
